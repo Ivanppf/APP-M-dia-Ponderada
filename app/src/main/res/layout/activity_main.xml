@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:forceDarkAllowed="false"
+    tools:targetApi="q">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintTop_toTopOf="@id/mainLayout"
+        android:gravity="center"
+        android:text="Calcule a média ponderada"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="By: Ivan.ppf"
+        android:layout_marginStart="5dp"
+        android:textColor="#50FFFFFF"
+        app:layout_constraintStart_toStartOf="@id/mainLayout"
+        app:layout_constraintTop_toTopOf="@id/mainLayout" />
+
+    <ScrollView
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintBottom_toTopOf="@id/resultado">
+
+        <LinearLayout
+            android:id="@+id/campos"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toTopOf="@id/botoes"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Resultado: 0"
+        android:layout_above="@id/botoes">
+    </TextView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/botoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/mainLayout">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_adicionar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_above="@id/btn_calcular"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_btn"
+            android:onClick="addComponent"
+            android:text="Adicionar número"
+            app:layout_constraintBottom_toTopOf="@id/btn_calcular"
+            app:layout_constraintEnd_toEndOf="@id/botoes"
+            app:layout_constraintStart_toStartOf="@id/botoes" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_calcular"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="calcular"
+            android:text="Calcular"
+            android:background="@drawable/bg_btn"
+            app:layout_constraintBottom_toBottomOf="@id/botoes"
+            app:layout_constraintEnd_toEndOf="@id/botoes"
+            app:layout_constraintStart_toStartOf="@id/botoes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
